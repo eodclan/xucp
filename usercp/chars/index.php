@@ -15,7 +15,7 @@ include(dirname(__FILE__) . "/../../include/features.php");
 site_secure();
 secure_url();
 
-site_header("Mein Charakter");
+site_header("".MYCHARACTERS."");
 site_navi_logged();
 site_content_logged();
 
