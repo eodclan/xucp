@@ -12,7 +12,7 @@
  Features requirements:
 
  1. Login & Register System
- 2. Staff Tools ( User Changer, Playerlist, News Creator, Rules Creator )
+ 2. Staff Tools ( User Changer, Playerlist, News Creator )
  3. Language System ( English & German )
  4. Support System
  5. Profile Changer
