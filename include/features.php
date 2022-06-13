@@ -98,7 +98,7 @@ if ($resultusers->num_rows > 0) {
 		<div class='container-fluid py-2'>
 			<nav aria-label='breadcrumb'>
 				<ol class='breadcrumb mb-0 py-3 px-0'>
-					<li class='breadcrumb-item'><a href='/usercp/whitelist/index.php?mywhitelist=addwl'>".$_SESSION['username']['site_settings_site_name']."</a></li>
+					<li class='breadcrumb-item'><a href='/index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
 					<li class='breadcrumb-item active' aria-current='page'>".SITECONFIG_ONLINE."</li>					
                 </ol>
 			</nav>
@@ -109,7 +109,7 @@ if ($resultusers->num_rows > 0) {
               <div class='col-lg-12'>
                 <div class='card'>
                   <div class='card-body'>
-			".SITECONFIG_ONLINENOTE."
+					".SITECONFIG_ONLINENOTE."
 				  </div>							
 				</div>
 			  </div>
