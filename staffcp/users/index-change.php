@@ -47,129 +47,109 @@ if ($result->num_rows > 0) {
 
 			// The 2nd check to make sure that nothing bad can happen.    
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".FRAGE_HEADER."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['email']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['whitelisted']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_13."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_13."
+					</div>
+				</div>
+			</div>";
 			}
 
 	        $sql = "UPDATE accounts SET username='".$username."', email='".$email."', whitelisted='".$whitelisted."' WHERE id = ".$userchange['id']."";
    
           if (mysqli_query($conn, $sql)) {
-            site_userchanged_done();
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".FRAGEDONE."
+					</div>
+				</div>
+			</div>";
+
           } else {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_7."
-								<br>
-								" . mysqli_error($conn) . "
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_7."
+					</div>
+				</div>
+			</div>";
           }
-          mysqli_close($conn);
+          //mysqli_close($conn);
         }            		
       }
       if(isset($_POST['delete'])){
         if(empty($_POST['username']) || empty($_POST['email'])){
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_10."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_10."
+					</div>
+				</div>
+			</div>";
         } else {
           $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
           $email 	= filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -177,124 +157,92 @@ if ($result->num_rows > 0) {
 
 			// The 2nd check to make sure that nothing bad can happen.    
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['email']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (preg_match('/[A-Za-z0-9]+/', $_POST['whitelisted']) == 0) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_14."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_14."
+					</div>
+				</div>
+			</div>";
 			}
 			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_13."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_13."
+					</div>
+				</div>
+			</div>";
 			}
 
 	        $delsql = "DELETE FROM accounts WHERE id = ".$userchange['id']."";
    
           if (mysqli_query($conn, $delsql)) {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_3."
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_13."
+					</div>
+				</div>
+			</div>";
           } else {
-			echo "
-			<div class='row clearfix'>
-                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='card'>				
-                        <div class='header'>
-                            <h2>
-								".PROJECTNAME."
-                            </h2>
-                        </div>
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".MSG_7."
-								<br>
-								" . mysqli_error($conn) . "
-                            </p>
-                        </div>				
-                    </div>					
-                </div>
-            </div>";
+		echo"
+			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+					<div class='toast-header'>
+						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+					</div>
+					<div class='toast-body'>
+						".MSG_7."
+					</div>
+				</div>
+			</div>";
           }
-          mysqli_close($conn);
+          //mysqli_close($conn);
         }            		
       }	  
     }
@@ -364,8 +312,8 @@ echo "
 														<input type='text' name='whitelisted' size='1' maxlength='1' class='form-control' value='" . $userchange["whitelisted"]. "' required>
 													</td>
 													<td>
-														<button type='submit' class='btn btn-dark' name='submit'>".STAFF_USERCONTROLSAVE."</button></submit>&nbsp;
-														<button type='submit' class='btn btn-dark' name='delete'>".STAFF_USERCONTROLDELETE."</button></submit>
+														<button type='submit' class='btn btn-dark' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button></submit>&nbsp;
+														<button type='submit' class='btn btn-dark' name='delete' data-target='successLiveToast'>".STAFF_USERCONTROLDELETE."</button></submit>
 													</td>													
 												</tr>						
 											</form>";
