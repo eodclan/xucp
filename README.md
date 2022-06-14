@@ -1,8 +1,6 @@
 # xUCP
  In this User Control Panel, it is a completely new development. The xUCP is for all Roleplay Projects!
  
- Demopage:  https://ucp.derstr1k3r.de
- 
  Main requirements:
 
  1. MySQL Server
