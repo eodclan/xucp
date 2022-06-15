@@ -135,115 +135,6 @@ if ($result->num_rows > 0) {
           }
           //mysqli_close($conn);
         }            		
-      }
-      if(isset($_POST['delete'])){
-        if(empty($_POST['username']) || empty($_POST['email'])){
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_10."
-					</div>
-				</div>
-			</div>";
-        } else {
-          $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-          $email 	= filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-          $whitelisted 	= filter_input(INPUT_POST, 'whitelisted', FILTER_SANITIZE_STRING);
-
-			// The 2nd check to make sure that nothing bad can happen.    
-			if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_14."
-					</div>
-				</div>
-			</div>";
-			}
-			if (preg_match('/[A-Za-z0-9]+/', $_POST['email']) == 0) {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_14."
-					</div>
-				</div>
-			</div>";
-			}
-			if (preg_match('/[A-Za-z0-9]+/', $_POST['whitelisted']) == 0) {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_14."
-					</div>
-				</div>
-			</div>";
-			}
-			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_13."
-					</div>
-				</div>
-			</div>";
-			}
-
-	        $delsql = "DELETE FROM accounts WHERE id = ".$userchange['id']."";
-   
-          if (mysqli_query($conn, $delsql)) {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_13."
-					</div>
-				</div>
-			</div>";
-          } else {
-		echo"
-			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-				<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-					<div class='toast-header'>
-						<strong class='me-auto'>".STAFF_USERCAHNEGED."</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-					</div>
-					<div class='toast-body'>
-						".MSG_7."
-					</div>
-				</div>
-			</div>";
-          }
-          //mysqli_close($conn);
-        }            		
       }	  
     }
 }
@@ -313,7 +204,6 @@ echo "
 													</td>
 													<td>
 														<button type='submit' class='btn btn-dark' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button></submit>&nbsp;
-														<button type='submit' class='btn btn-dark' name='delete' data-target='successLiveToast'>".STAFF_USERCONTROLDELETE."</button></submit>
 													</td>													
 												</tr>						
 											</form>";
