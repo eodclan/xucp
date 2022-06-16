@@ -14,7 +14,6 @@ include(dirname(__FILE__) . "/../../include/features.php");
 
 site_secure();
 secure_url();
-
 site_secure_staff_check();
 
 site_header("".NEWS_HEADER."");

@@ -126,146 +126,145 @@ echo "
 					// output data of each row
 					while($siteconfigchange = $result->fetch_assoc()) {
 					echo "
-							<form class='form-horizontal' method='post' action='".$_SERVER['PHP_SELF']."?siteconfig=".$siteconfigchange['id']."' enctype='multipart/form-data'>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='email_address_2'>".SITECONFIG_ONLINE."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-												<input type='text' name='site_online' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_ONLINE."' value='" . $siteconfigchange["site_online"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_NAME."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_name' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_NAME."' value='" . $siteconfigchange["site_name"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_TEAMSPEAK."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_teamspeak' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_TEAMSPEAK."' value='" . $siteconfigchange["site_teamspeak"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_DOWNLOAD_SECTION."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_dl_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_DOWNLOAD_SECTION."' value='" . $siteconfigchange["site_dl_section"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_GSERVERNAME."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_gservername' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERNAME."' value='" . $siteconfigchange["site_gservername"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_GSERVERIP."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_gserverip' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERIP."' value='" . $siteconfigchange["site_gserverip"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_GSERVERPORT."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_gserverport' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERPORT."' value='" . $siteconfigchange["site_gserverport"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>								
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_RAGEMP."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_rage_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_RAGEMP."' value='" . $siteconfigchange["site_rage_section"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_ALTV."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_altv_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_ALTV."' value='" . $siteconfigchange["site_altv_section"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_FIVEM."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_fivem_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_FIVEM."' value='" . $siteconfigchange["site_fivem_section"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='row clearfix'>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
-                                        <label for='password_2'>".SITECONFIG_REDM."</label>
-                                    </div>
-                                    <div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
-                                        <div class='form-group'>
-                                            <div class='form-line'>
-                                                <input type='text' name='site_redm_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_REDM."' value='" . $siteconfigchange["site_redm_section"]. "' required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-								
-                                <div class='row clearfix'>
-                                    <div class='col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5'>
-                                        <button type='submit' class='btn btn-primary m-t-15 waves-effect' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button>
-                                    </div>
-                                </div>
-                            </form>";
+						<form class='form-horizontal' method='post' action='".$_SERVER['PHP_SELF']."?siteconfig=".$siteconfigchange['id']."' enctype='multipart/form-data'>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='email_address_2'>".SITECONFIG_ONLINE."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_online' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_ONLINE."' value='" . $siteconfigchange["site_online"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_NAME."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_name' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_NAME."' value='" . $siteconfigchange["site_name"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_TEAMSPEAK."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_teamspeak' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_TEAMSPEAK."' value='" . $siteconfigchange["site_teamspeak"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_DOWNLOAD_SECTION."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_dl_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_DOWNLOAD_SECTION."' value='" . $siteconfigchange["site_dl_section"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_GSERVERNAME."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_gservername' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERNAME."' value='" . $siteconfigchange["site_gservername"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_GSERVERIP."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_gserverip' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERIP."' value='" . $siteconfigchange["site_gserverip"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_GSERVERPORT."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_gserverport' size='12' maxlength='64' class='form-control' placeholder='".SITECONFIG_GSERVERPORT."' value='" . $siteconfigchange["site_gserverport"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>								
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_RAGEMP."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_rage_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_RAGEMP."' value='" . $siteconfigchange["site_rage_section"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_ALTV."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_altv_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_ALTV."' value='" . $siteconfigchange["site_altv_section"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_FIVEM."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_fivem_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_FIVEM."' value='" . $siteconfigchange["site_fivem_section"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='password_2'>".SITECONFIG_REDM."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<input type='text' name='site_redm_section' size='12' maxlength='12' class='form-control' placeholder='".SITECONFIG_REDM."' value='" . $siteconfigchange["site_redm_section"]. "' required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5'>
+									<button type='submit' class='btn btn-primary m-t-15 waves-effect' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button>
+								</div>
+							</div>
+						</form>";
 					}
 				}					
 
