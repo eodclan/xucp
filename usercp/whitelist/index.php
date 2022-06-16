@@ -186,7 +186,7 @@ echo "
 					</div>
 				</div>			
 				<center>
-					<input name='myaddwl' type='submit' value='Whitelist abschicken' class='btn btn-dark mr-2' />
+					<input name='myaddwl' type='submit' value='".FRAGE_SEND."' class='btn btn-dark mr-2' />
 				</center>
 			</form>";
 		}

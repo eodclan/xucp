@@ -90,6 +90,7 @@ define("FRAGEDONEBTN","Bearbeiten");
 define("FRAGE_HEADER","Whitelist Fragen");
 define("FRAGE_HEADER_2","Whitelist Bewerbungen");
 define("FRAGE_VIEW","Bewerbung anschauen");
+define("FRAGE_SEND","Bewerbung abschicken");
 
 // ************************************************************************************//
 // * English Language Section - Main Site Settings 

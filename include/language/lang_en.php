@@ -92,6 +92,7 @@ define("FRAGEDONEBTN","Edit");
 define("FRAGE_HEADER","Whitelist Questions");
 define("FRAGE_HEADER_2","Whitelist Applications");
 define("FRAGE_VIEW","View Application");
+define("FRAGE_SEND","Submit application");
 
 // ************************************************************************************//
 // * English Language Section - Main Site Settings 
