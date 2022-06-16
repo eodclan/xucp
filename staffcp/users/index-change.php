@@ -207,7 +207,7 @@ echo "
 								}
 							}					
 
-						echo "		  
+					echo "		  
 							</tbody>
 						</table>";
 									
