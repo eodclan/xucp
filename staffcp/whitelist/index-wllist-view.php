@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -14,7 +14,6 @@ include(dirname(__FILE__) . "/../../include/features.php");
 
 site_secure();
 secure_url();
-
 site_secure_staff_check();
 
 site_header("".FRAGE_HEADER_2."");
@@ -176,6 +175,5 @@ echo"
 				</div>
 			</div>
 		</section>";
-
 site_footer();
 ?>

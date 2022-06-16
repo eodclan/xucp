@@ -4,12 +4,20 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
 // * License Typ: GNU GPLv3
 // ************************************************************************************//
+// * Prevent direct PHP call
+// ************************************************************************************//
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {        
+	header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+	setCookie("PHPSESSID", "", 0x7fffffff,  "/");
+  	session_destroy();
+	die( header( 'location: /404.php' ) );
+}
 function site_secure() {
 	if(!isset($_SESSION['username']['secure_first']) || $_SESSION['username']['secure_granted'] !== 'granted' || $_SESSION['username']['site_settings_site_online'] !== '1') {
 		site_header_nologged("".SECURE_SYSTEM."");
@@ -37,15 +45,15 @@ function site_secure() {
               <div class='col-lg-12'>
                 <div class='card'>
                   <div class='card-body'>
-			".MSG_1."
+					".MSG_1."
 				  </div>							
 				</div>
 			  </div>
 			</div>
 		  </div>
 		</section>";		
-		site_footer();
-		die();
+	site_footer();
+	die();
 	}  
 }
 
@@ -77,7 +85,7 @@ function site_secure_logout() {
               <div class='col-lg-12'>
                 <div class='card'>
                   <div class='card-body'>
-			".MSG_17."
+					".MSG_17."
 				  </div>							
 				</div>
 			  </div>
@@ -87,7 +95,6 @@ function site_secure_logout() {
   site_footer(); 
   exit();   
 }
-
 
 function site_secure_staff_check() {
 	if(intval($_SESSION['username']['secure_staff']) < 12) {
@@ -116,16 +123,15 @@ function site_secure_staff_check() {
               <div class='col-lg-12'>
                 <div class='card'>
                   <div class='card-body'>
-			".MSG_2."
+					".MSG_2."
 				  </div>							
 				</div>
 			  </div>
 			</div>
 		  </div>
 		</section>";
-		site_footer();
-		die();		
+	site_footer();
+	die();		
    }
 }
-
 ?>

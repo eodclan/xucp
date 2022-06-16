@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -178,35 +178,33 @@ echo "
 							</thead>
 							<tbody>";
 
-							$sql = "SELECT id, username, email, whitelisted from accounts ORDER BY id ASC LIMIT ".$start_from.", ".$limit."";
-							$result = $conn->query($sql);
-
-							if ($result->num_rows > 0) {
-								// output data of each row
-								while($userchange = $result->fetch_assoc()) {
-								echo "
-									<form method='post' action='".$_SERVER['PHP_SELF']."?ucpchanger=".$userchange['id']."' enctype='multipart/form-data'>
-										<tr>
-											<td>
-												<p class='btn btn-*'>" . $userchange["id"]. "</p>
-											</td>
-											<td>			
-												<input type='text' name='username' size='50' maxlength='60' class='form-control' value='" . $userchange["username"]. "' required>
-											</td>						
-											<td>						
-												<input type='text' name='email' size='50' maxlength='60' class='form-control' value='" . $userchange["email"]. "' required>
-											</td>
-											<td>
-												<input type='text' name='whitelisted' size='1' maxlength='1' class='form-control' value='" . $userchange["whitelisted"]. "' required>
-											</td>
-											<td>
-												<button type='submit' class='btn btn-dark' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button></submit>&nbsp;
-											</td>													
-										</tr>						
-									</form>";
-								}
-							}					
-
+					$sql = "SELECT id, username, email, whitelisted from accounts ORDER BY id ASC LIMIT ".$start_from.", ".$limit."";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while($userchange = $result->fetch_assoc()) {
+						echo "
+							<form method='post' action='".$_SERVER['PHP_SELF']."?ucpchanger=".$userchange['id']."' enctype='multipart/form-data'>
+								<tr>
+									<td>
+										<p class='btn btn-*'>" . $userchange["id"]. "</p>
+									</td>
+									<td>			
+										<input type='text' name='username' size='50' maxlength='60' class='form-control' value='" . $userchange["username"]. "' required>
+									</td>						
+									<td>						
+										<input type='text' name='email' size='50' maxlength='60' class='form-control' value='" . $userchange["email"]. "' required>
+									</td>
+									<td>
+										<input type='text' name='whitelisted' size='1' maxlength='1' class='form-control' value='" . $userchange["whitelisted"]. "' required>
+									</td>
+									<td>
+										<button type='submit' class='btn btn-dark' name='submit' data-target='successLiveToast'>".STAFF_USERCONTROLSAVE."</button></submit>&nbsp;
+									</td>													
+								</tr>						
+							</form>";
+						}
+					}					
 					echo "		  
 							</tbody>
 						</table>";

@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -14,7 +14,6 @@ include(dirname(__FILE__) . "/../../include/features.php");
 
 site_secure();
 secure_url();
-
 site_secure_staff_check();
 
 site_header("".FRAGE_HEADER."");
@@ -51,7 +50,7 @@ if(isset($_POST['wlask_sup'])){
         $frage11 	= filter_input(INPUT_POST, 'frage11', FILTER_SANITIZE_STRING);
         $frage12 	= filter_input(INPUT_POST, 'frage12', FILTER_SANITIZE_STRING);
 		
-	// The 2nd check to make sure that nothing bad can happen.
+		// The 2nd check to make sure that nothing bad can happen.
         if (preg_match('/[A-Za-z0-9]+/', $_POST['frage1']) == 0) {
 		echo"
 			<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
@@ -251,7 +250,6 @@ if(isset($_POST['wlask_sup'])){
 			</div>";
 
         }
-        //$conn->close();
     }
 }
 echo "

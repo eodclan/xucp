@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -16,7 +16,7 @@ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERV
 	header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
 	setCookie("PHPSESSID", "", 0x7fffffff,  "/");
   	session_destroy();
-        die( header( 'location: /404.php' ) );
+	die( header( 'location: /404.php' ) );
 }
 // ************************************************************************************//
 // Settings files from this xucp
@@ -116,10 +116,10 @@ if ($resultusers->num_rows > 0) {
 			</div>
 		  </div>
 		</section>";
-			site_footer();
-			setCookie("PHPSESSID", "", 0x7fffffff,  "/");
-			session_destroy();	
-			die();		
+		site_footer();
+		setCookie("PHPSESSID", "", 0x7fffffff,  "/");
+		session_destroy();	
+		die();		
 		}
 	}
 }
@@ -133,13 +133,11 @@ if(isset($_POST['logout'])){
 // Avatar System
 // ************************************************************************************//
 function is_image($src) {
-
     if(@getimagesize($src) !== false) {
         return(1);
     } else {
         return(0);
     }
-
 }
 // ************************************************************************************//
 // Site hash system from session system

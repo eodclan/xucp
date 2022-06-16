@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -85,24 +85,24 @@ echo "
 					echo "
 						</tbody>
 					</table>";
-					$result_db = mysqli_query($conn,"SELECT COUNT(id) FROM whitelist"); 
-					$userchange_db = mysqli_fetch_row($result_db);  
-					$total_records = $userchange_db[0];  
-					$total_sites = ceil($total_records / $limit); 
-					$siteLink = "
-						<div class='dataTable-bottom'>
-							<nav class='dataTable-pagination'>
-								<ul class='dataTable-pagination-list'>";  
-							for ($i=1; $i<=$total_sites; $i++) {
-								$siteLink .= "
-									<li>
-										<a href='".$_SERVER['PHP_SELF']."?site=".$i."' data-page='".$i."'>".$i."</a>
-									</li>";	
-							}
-							echo $siteLink . "
-								</ul>
-							</nav>
-						</div>					
+				$result_db = mysqli_query($conn,"SELECT COUNT(id) FROM whitelist"); 
+				$userchange_db = mysqli_fetch_row($result_db);  
+				$total_records = $userchange_db[0];  
+				$total_sites = ceil($total_records / $limit); 
+				$siteLink = "
+					<div class='dataTable-bottom'>
+						<nav class='dataTable-pagination'>
+							<ul class='dataTable-pagination-list'>";  
+						for ($i=1; $i<=$total_sites; $i++) {
+							$siteLink .= "
+								<li>
+									<a href='".$_SERVER['PHP_SELF']."?site=".$i."' data-page='".$i."'>".$i."</a>
+								</li>";	
+						}
+						echo $siteLink . "
+							</ul>
+						</nav>
+					</div>					
 				  </div>							
 				</div>
 			  </div>

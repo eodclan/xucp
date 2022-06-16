@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -18,8 +18,7 @@ secure_url();
 site_header("Whitelist System");
 site_navi_logged();
 site_content_logged();
-
-				echo"
+echo"
 		<!-- Page Header-->
 		<div class='bg-dash-dark-2 py-4'>
 			<div class='container-fluid'>
@@ -48,6 +47,5 @@ site_content_logged();
 			</div>
 		  </div>
 		</section>";
-	
 site_footer();	
 ?>

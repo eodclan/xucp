@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0
+// * Version: 1.0.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -16,7 +16,7 @@ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERV
 	header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
 	setCookie("PHPSESSID", "", 0x7fffffff,  "/");
   	session_destroy();
-        die( header( 'location: /404.php' ) );
+	die( header( 'location: /404.php' ) );
 }
 // ************************************************************************************//
 // * Session starting
@@ -35,7 +35,6 @@ define('MYSQL_PASSWORD', 'your_database_password');
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_DATABASE', 'your_database_name');
 define('MYSQL_PORT', '3306');
-
 // ************************************************************************************//
 // * MySQL Account Data Connect
 // ************************************************************************************//
