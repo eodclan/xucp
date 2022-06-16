@@ -14,7 +14,6 @@ include(dirname(__FILE__) . "/../../include/features.php");
 	
 site_secure();
 secure_url();
-
 site_secure_staff_check();
 
 if (isset($_GET["ucpchanger"])) $ucpchanger = trim(htmlentities($_GET["ucpchanger"]));
