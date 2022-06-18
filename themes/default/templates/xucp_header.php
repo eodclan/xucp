@@ -139,7 +139,7 @@ function site_header_nologged($SITESUBTITLE = "") {
     <header class='header'>   
       <nav class='navbar navbar-expand-lg py-3 bg-dash-dark-2 border-bottom border-dash-dark-1 z-index-10'>
         <div class='container-fluid d-flex align-items-center justify-content-between py-1'>
-          <div class='navbar-header d-flex align-items-center'><a class='navbar-brand text-uppercase text-reset' href='index.php'>
+          <div class='navbar-header d-flex align-items-center'><a class='navbar-brand text-uppercase text-reset' href='/index.php'>
               <div class='brand-text brand-big'><strong class='text-primary'>".$_SESSION['username']['site_settings_site_name']."</strong></div>
               <div class='brand-text brand-sm'><strong class='text-primary'>".$_SESSION['username']['site_settings_site_name']."</strong></div></a>
           </div>
