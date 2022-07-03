@@ -1,0 +1,26 @@
+/* your styles go here */
+.img-placeholder {
+    width: 50%;
+    color: white;
+    height: 55%;
+    background: black;
+    opacity: .7;
+    height: 210px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/* Dropzone ==================================== */
+.dropzone {
+  border: 2px solid transparent !important;
+  background-color: #2a3042 !important; }
+  .dropzone .dz-message .drag-icon-cph .material-icons {
+    font-size: 80px;
+    color: #777; }
+
+.dz-drag-hover {
+  border: 2px dashed #888 !important; }

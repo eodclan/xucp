@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -32,7 +32,7 @@ $start_from = ($site-1) * $limit;
 site_header("".SITECONFIG_HEADER."");
 site_navi_logged();
 site_content_logged();
-$sql = "SELECT id, site_dl_section, site_rage_section, site_altv_section, site_fivem_section, site_redm_section, site_online, site_name, site_teamspeak, site_gservername, site_gserverip, site_gserverport from config";
+$sql = "SELECT id, site_dl_section, site_rage_section, site_altv_section, site_fivem_section, site_redm_section, site_online, site_name, site_teamspeak, site_gservername, site_gserverip, site_gserverport, site_themes from config";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -51,8 +51,9 @@ if ($result->num_rows > 0) {
 		  $site_gservername 	= filter_input(INPUT_POST, 'site_gservername', FILTER_SANITIZE_STRING);
 		  $site_gserverip 		= filter_input(INPUT_POST, 'site_gserverip', FILTER_SANITIZE_STRING);
 		  $site_gserverport 	= filter_input(INPUT_POST, 'site_gserverport', FILTER_SANITIZE_STRING);		  
+		  $site_themes 			= filter_input(INPUT_POST, 'site_themes', FILTER_SANITIZE_STRING);	
 		  
-		  $sql = "UPDATE config SET site_dl_section='".$site_dl_section."', site_rage_section='".$site_rage_section."', site_altv_section='".$site_altv_section."', site_fivem_section='".$site_fivem_section."', site_redm_section='".$site_redm_section."', site_online='".$site_online."', site_name='".$site_name."', site_teamspeak='".$site_teamspeak."', site_gservername='".$site_gservername."', site_gserverip='".$site_gserverip."', site_gserverport='".$site_gserverport."' WHERE id = ".$siteconfigchange['id']."";
+		  $sql = "UPDATE config SET site_dl_section='".$site_dl_section."', site_rage_section='".$site_rage_section."', site_altv_section='".$site_altv_section."', site_fivem_section='".$site_fivem_section."', site_redm_section='".$site_redm_section."', site_online='".$site_online."', site_name='".$site_name."', site_teamspeak='".$site_teamspeak."', site_gservername='".$site_gservername."', site_gserverip='".$site_gserverip."', site_gserverport='".$site_gserverport."', site_themes='".$site_themes."' WHERE id = ".$siteconfigchange['id']."";
 		  $_SESSION['username']['site_settings_site_online'] = $site_online;
 		  $_SESSION['username']['site_settings_site_name'] = $site_name;
 		  $_SESSION['username']['site_settings_dl_section'] = $site_dl_section;		  
@@ -63,7 +64,8 @@ if ($result->num_rows > 0) {
 		  $_SESSION['username']['site_settings_teamspeak'] = $site_teamspeak;
 		  $_SESSION['username']['site_settings_gservername'] = $site_gservername;
 		  $_SESSION['username']['site_settings_gserverip'] = $site_gserverip;
-		  $_SESSION['username']['site_settings_gserverport'] = $site_gserverport;		  
+		  $_SESSION['username']['site_settings_gserverport'] = $site_gserverport;
+		  $_SESSION['username']['site_settings_themes'] = $site_themes;
           if (mysqli_query($conn, $sql)) {
             echo"
 				<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
@@ -139,6 +141,24 @@ echo "
 									</div>
 								</div>
 							</div>
+							<div class='row clearfix'>
+								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
+									<label for='email_address_2'>".SITECONFIG_THEMES."</label>
+								</div>
+								<div class='col-lg-10 col-md-10 col-sm-8 col-xs-7'>
+									<div class='form-group'>
+										<div class='form-line'>
+											<select name='site_themes' class='form-control show-tick' required>
+												<option value=''>-- ".SITECONFIG_THEMES_INFO." --</option>
+												<option value='default-black'>".SITECONFIG_THEMES_BLACK."</option>
+												<option value='default-blue'>".SITECONFIG_THEMES_BLUE."</option>
+												<option value='default-green'>".SITECONFIG_THEMES_GREEN."</option>
+												<option value='default-red'>".SITECONFIG_THEMES_RED."</option>												
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>							
 							<div class='row clearfix'>
 								<div class='col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label'>
 									<label for='password_2'>".SITECONFIG_NAME."</label>

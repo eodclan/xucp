@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -185,7 +185,7 @@ echo "
 							// output data of each row
 							while($account = $result->fetch_assoc()) {
 								echo "
-							<div class='card-header' style='background-image: url(".htmlentities($account['userava'], ENT_QUOTES, 'UTF-8').");'></div>
+							<div class='card-header'></div>
 							<div class='card-body text-center'><img class='card-profile-img' src='".htmlentities($account['userava'], ENT_QUOTES, 'UTF-8')."' title='...'>";
 							}	
 						}		
@@ -255,7 +255,7 @@ echo "
 									</div>									
 									<div class='col-md-12'>
 										<label class='form-label'>".SIGNATUR."</label>
-										<textarea class='form-control' type='text' name='usersig' rows='5' placeholder='".SIGNATUR."' value='".htmlentities($account['usersig'], ENT_QUOTES, 'UTF-8')."'></textarea>
+										<textarea class='form-control' type='text' name='usersig' placeholder='".SIGNATUR."' value='".htmlentities($account['usersig'], ENT_QUOTES, 'UTF-8')."'></textarea>
 									</div>
 								</div>
 							</div>

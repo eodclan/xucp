@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -71,7 +71,7 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 		if($numRows  == 1){
 			$account = mysqli_fetch_assoc($rs);
 			if(password_verify($password,$account['password'])){
-				$sqlsession = "SELECT id, site_dl_section, site_rage_section, site_altv_section, site_fivem_section, site_online, site_name from config WHERE id = 1";
+				$sqlsession = "SELECT id, site_dl_section, site_rage_section, site_altv_section, site_fivem_section, site_online, site_name, site_themes from config WHERE id = 1";
 				$resultsession = $conn->query($sqlsession);
 
 				if ($resultsession->num_rows > 0) {
@@ -84,6 +84,7 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 							$_SESSION['username']['site_settings_dl_section_ragemp'] = $session["site_rage_section"];
 							$_SESSION['username']['site_settings_dl_section_altv'] = $session["site_altv_section"];
 							$_SESSION['username']['site_settings_dl_section_fivem'] = $session["site_fivem_section"];
+							$_SESSION['username']['site_settings_themes'] = $session["site_themes"];
 						}
 					}
 				}

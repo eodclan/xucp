@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -157,7 +157,7 @@ echo "
 								<small class='text-muted'>".NEWS_TITLE_EN_TEXT."</small>
 							</h6>
 							<div class='input-group'>
-								<input style='box-shadow: 0 0 1px rgba(0,0,0, .4);' type='text' name='title' size='50' maxlength='100' class='form-control' value='".$news["title"]."' required>
+								<input type='text' name='title' size='50' maxlength='100' class='form-control' value='".$news["title"]."' required>
 							</div>	
                         </td>
 					  </tr>
@@ -168,7 +168,7 @@ echo "
 								<small class='text-muted'>".NEWS_TITLE_DE_TEXT."</small>
 							</h6>
 							<div class='input-group'>
-								<input style='box-shadow: 0 0 1px rgba(0,0,0, .4);' type='text' name='title_de' size='50' maxlength='100' class='form-control' value='".$news["title_de"]."' required>
+								<input type='text' name='title_de' size='50' maxlength='100' class='form-control' value='".$news["title_de"]."' required>
 							</div>	
                         </td>
 					  </tr>
@@ -179,7 +179,7 @@ echo "
 								<small class='text-muted'>".NEWS_CONTENT_EN_TEXT."</small>
 							</h6>
 							<div class='input-group'>					
-								<textarea style='box-shadow: 0 0 1px rgba(0,0,0, .4);' type='text' name='content' size='450' maxlength='1260' class='form-control' value='".$news["content"]."' required></textarea>
+								<textarea type='text' name='content' size='450' maxlength='1260' class='form-control' value='".$news["content"]."' required></textarea>
 							</div>	
                         </td>						
                       </tr>
@@ -190,7 +190,7 @@ echo "
 								<small class='text-muted'>".NEWS_CONTENT_DE_TEXT."</small>
 							</h6>
 							<div class='input-group'>					
-								<textarea style='box-shadow: 0 0 1px rgba(0,0,0, .4);' type='text' name='content_de' size='450' maxlength='1260' class='form-control' value='".$news["content_de"]."' required></textarea>
+								<textarea type='text' name='content_de' size='450' maxlength='1260' class='form-control' value='".$news["content_de"]."' required></textarea>
 							</div>	
                         </td>						
                       </tr>                      					  

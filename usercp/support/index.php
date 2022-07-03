@@ -4,13 +4,16 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
 // * License Typ: GNU GPLv3
 // ************************************************************************************//
 include(dirname(__FILE__) . "/../../include/features.php");
+
+site_secure();
+secure_url();
 
 $limit = 10;  
 if (isset($_GET["site"])) {
@@ -19,9 +22,6 @@ if (isset($_GET["site"])) {
 	$site=1;
 };  
 $start_from = ($site-1) * $limit;
-
-site_secure();
-secure_url();
 
 if (isset($_GET["support"])) $support = trim(htmlentities($_GET["support"]));
 elseif (isset($_POST["support"])) $support = trim(htmlentities($_POST["support"]));

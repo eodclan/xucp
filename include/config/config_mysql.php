@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -21,12 +21,18 @@ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERV
 // ************************************************************************************//
 // * Session starting
 // ************************************************************************************//
+$session_hash = 'sha512';
+ini_set('session.use_trans_sid', FALSE);
+ini_set('session.entropy_file', '/dev/urandom');
+ini_set('session.hash_function', 'whirlpool');
+ini_set('session.use_only_cookies', TRUE);
+ini_set('session.cookie_httponly', TRUE);
+ini_set('session.cookie_lifetime', 1200);
+ini_set('session.cookie_secure', TRUE);
+$cookieParams = session_get_cookie_params();
+session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
 session_start();
-$params = session_get_cookie_params();
-setcookie("PHPSESSID", session_id(), 0, $params["path"], $params["domain"],
-false, // this is the secure flag you need to set. Default is false.
-true // this is the httpOnly flag you need to set
-);
+session_regenerate_id(true);
 // ************************************************************************************//
 // * MySQL Database Connection
 // ************************************************************************************//

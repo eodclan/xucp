@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.0.1
+// * Version: 1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -112,6 +112,12 @@ define("SITECONFIG_REDM","RedM");
 define("SITECONFIG_GSERVERNAME","Game Server Name");
 define("SITECONFIG_GSERVERIP","Game Server IP");
 define("SITECONFIG_GSERVERPORT","Game Server Port");
+define("SITECONFIG_THEMES","Themes");
+define("SITECONFIG_THEMES_INFO","Choose the theme you want to use.");
+define("SITECONFIG_THEMES_BLACK","Black");
+define("SITECONFIG_THEMES_BLUE","Blue");
+define("SITECONFIG_THEMES_GREEN","Green");
+define("SITECONFIG_THEMES_RED","Red");
 
 // ************************************************************************************//
 // * English Language Section - Message System 
