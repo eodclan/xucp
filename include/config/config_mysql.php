@@ -30,7 +30,7 @@ ini_set('session.cookie_httponly', TRUE);
 ini_set('session.cookie_lifetime', 1200);
 ini_set('session.cookie_secure', TRUE);
 $cookieParams = session_get_cookie_params();
-session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
+session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], true, true);
 session_start();
 session_regenerate_id(true);
 // ************************************************************************************//

@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.1
+// * Version: 1.1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -33,43 +33,18 @@ if ($support == "remoticket") {
 		$result3 = mysqli_query($conn, $sql3);
 		if($result3)
 		{
-			site_header("".USERSUPPORT."");
-			site_navi_logged();
-			site_content_logged();	
-		echo "
-			<!-- Page Header-->
-			<div class='bg-dash-dark-2 py-4'>
-				<div class='container-fluid'>
-					<h2 class='h5 mb-0'>".WELCOMETO." ".USERSUPPORT."!</h2>
-				</div>
-			</div>
-			<!-- Breadcrumb-->
-			<div class='container-fluid py-2'>
-				<nav aria-label='breadcrumb'>
-					<ol class='breadcrumb mb-0 py-3 px-0'>
-						<li class='breadcrumb-item'><a href='index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
-						<li class='breadcrumb-item active' aria-current='page'>".USERSUPPORT."</li>					
-					</ol>
-				</nav>
-			</div>
-			<section class='pt-0'>
-			<div class='container-fluid'>
-			<div class='row gy-4'>
-			<div class='col-lg-12'>
-                    <div class='card'>				
-                        <div class='body'>
-                            <p class='m-t-15 m-b-30'>
-								".SUPPORTDELETEINFO."<br><br>".SUPPORTDELETE1."
-                            </p>
-                        </div>				
-                    </div>					
-			</div>
-			</div>
-			</div>
-			</section>";
-			//$conn->close();
-			site_footer();
-			die();
+            		echo"
+				<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+					<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+						<div class='toast-header'>
+							<strong class='me-auto'>".USERSUPPORT."</strong>
+							<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+						</div>
+						<div class='toast-body'>
+							".SUPPORTDELETEINFO."
+						</div>
+					</div>
+				</div>";
 		} 
 	}		           		
 } 
@@ -98,20 +73,6 @@ if ($support == "addticket") {
 			$posted 	= date('Y-m-d H:i:s');
 
 		// The 2nd check to make sure that nothing bad can happen.
-		if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-            		echo"
-				<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
-					<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
-						<div class='toast-header'>
-							<strong class='me-auto'>".USERSUPPORT."</strong>
-							<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-						</div>
-						<div class='toast-body'>
-							".MSG_10."
-						</div>
-					</div>
-				</div>";
-		}
 		if (preg_match('/[A-Za-z0-9]+/', $_POST['msg']) == 0) {
            		 echo"
 				<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>

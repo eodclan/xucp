@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.1
+// * Version: 1.1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -18,6 +18,7 @@ $xucp_result = $conn->query($xucp_sql);
 if ($xucp_result->num_rows > 0) {
 	// output data of each row
 	while($xucp = $xucp_result->fetch_assoc()) {
+
 		$_SESSION['username']['site_settings_site_online'] = $xucp["site_online"];
 		$_SESSION['username']['site_settings_site_name'] = $xucp["site_name"];
 		$_SESSION['username']['site_settings_themes'] = $xucp["site_themes"];
