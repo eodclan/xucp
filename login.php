@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.1
+// * Version: 1.1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -78,22 +78,27 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 					// output data of each row
 					while($session = $resultsession->fetch_assoc()) {
 						if ($session["site_online"] == "1") {
-							$_SESSION['username']['site_settings_site_online'] = $session["site_online"];
-							$_SESSION['username']['site_settings_site_name'] = $session["site_name"];
-							$_SESSION['username']['site_settings_dl_section'] = $session["site_dl_section"];
-							$_SESSION['username']['site_settings_dl_section_ragemp'] = $session["site_rage_section"];
-							$_SESSION['username']['site_settings_dl_section_altv'] = $session["site_altv_section"];
-							$_SESSION['username']['site_settings_dl_section_fivem'] = $session["site_fivem_section"];
-							$_SESSION['username']['site_settings_themes'] = $session["site_themes"];
+							$_SESSION['username'] = [
+								'site_settings_site_online' => $session["site_online"],
+								'site_settings_site_name' => $session["site_name"],
+								'site_settings_dl_section' => $session["site_dl_section"],
+								'site_settings_dl_section_ragemp' => $session["site_rage_section"],
+								'site_settings_dl_section_altv' => $session["site_altv_section"],
+								'site_settings_dl_section_fivem' => $session["site_fivem_section"],
+								'site_settings_dl_section_redm' => $session["site_redm_section"],
+								'site_settings_themes' => $session["site_themes"]
+							];
 						}
 					}
 				}
-				
-				$_SESSION['username']['secure_first'] = $account["id"];
-				$_SESSION['username']['secure_granted'] = "granted";
-				$_SESSION['username']['secure_staff'] = $account["adminlevel"];
-				$_SESSION['username']['secure_lang'] = $account["language"];
-				$_SESSION['username']["secure_key"] = sitehash($username);
+
+				$_SESSION['username'] = [
+					'secure_first' => $account["id"],
+					'secure_granted' => "granted",
+					'secure_staff' => $account["adminlevel"],
+					'secure_lang' => $account["language"],
+					'secure_key' => sitehash($username)
+				];
 				header("Location:dashboard.php");
 			}else{
 				echo"
@@ -146,6 +151,23 @@ echo "
                 </ol>
 			</nav>
 		</div>
+	    <section class='pt-0'>
+		<div class='container-fluid'>
+            <div class='row gy-4'>
+              <div class='col-lg-12'>
+                <div class='card'>
+                  <div class='card-header'>		  
+			Demo Account	
+                </div>
+                  <div class='card-body'>		  
+			Username: Demo
+			<br>
+			Password: demo	
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 	    <section class='pt-0'>
 		<div class='container-fluid'>
             <div class='row gy-4'>

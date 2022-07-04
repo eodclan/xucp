@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.1
+// * Version: 1.1.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -21,6 +21,7 @@ site_content_nologged();
 if (isset($_GET["myregister"])) $myregister = trim(htmlentities($_GET["myregister"]));
 elseif (isset($_POST["myregister"])) $myregister = trim(htmlentities($_POST["myregister"]));
 else $myregister = "view";
+
 
 if ($myregister == "register") {
 	if(isset($_POST['now_register'])){
@@ -123,6 +124,7 @@ if ($myregister == "register") {
 			}
 		}	
 	}
+
 	$conn->close();   	
 }
 if ($myregister == "register") {	
