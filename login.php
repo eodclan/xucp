@@ -204,23 +204,6 @@ echo "
             <div class='row gy-4'>
               <div class='col-lg-12'>
                 <div class='card'>
-                  <div class='card-header'>		  
-			Demo Account	
-                </div>
-                  <div class='card-body'>		  
-			Username: Demo
-			<br>
-			Password: demo	
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-	    <section class='pt-0'>
-		<div class='container-fluid'>
-            <div class='row gy-4'>
-              <div class='col-lg-12'>
-                <div class='card'>
                   <div class='card-body'>		  
 			<form action='".$_SERVER['PHP_SELF']."' method='post' enctype='multipart/form-data' autocomplete='off'>
 				<input type='hidden' name='csrf_token' value='".$token."'>
