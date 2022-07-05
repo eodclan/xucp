@@ -167,7 +167,7 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 					</div>
 				</div>";			
 		}
-		mysqli_close($conn);
+		$conn->close();
 	}	
 }
 
