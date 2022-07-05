@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.1.1
+// * Version: 1.2
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -78,7 +78,10 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 								Problem with CSRF Token Validation
 							</div>
 						</div>
-					</div>";			
+					</div>";					
+				unset($_SESSION['secure_granted']['granted']);					
+				unset($_SESSION['xucp_secure']['csrf_token']);
+				unset($_SESSION['xucp_secure']['csrf_token_time']);					
 			}
 		}
 		// CSRF Token Time Validation
@@ -98,7 +101,8 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 								CSRF Token Expired
 							</div>
 						</div>
-					</div>";			
+					</div>";
+				unset($_SESSION['secure_granted']['granted']);					
 				unset($_SESSION['xucp_secure']['csrf_token']);
 				unset($_SESSION['xucp_secure']['csrf_token_time']);
 			}
