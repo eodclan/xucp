@@ -23,7 +23,6 @@ function site_secure() {
 		site_header_nologged("".SECURE_SYSTEM."");
 		site_navi_nologged();
 		site_content_nologged();
-print_r($_SESSION);
   echo "
 		<!-- Page Header-->
 		<div class='bg-dash-dark-2 py-4'>
