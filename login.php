@@ -63,7 +63,46 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 					</div>
 				</div>";			
 		}
-
+		// CSRF Token Validation
+		if(isset($_POST['csrf_token'])){
+			if($_POST['csrf_token'] === $_SESSION['xucp_secure']['csrf_token']){
+			}else{
+				echo"
+					<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+						<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+							<div class='toast-header'>
+								<strong class='me-auto'>".LOGIN."</strong>
+								<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+							</div>
+							<div class='toast-body'>
+								Problem with CSRF Token Validation
+							</div>
+						</div>
+					</div>";			
+			}
+		}
+		// CSRF Token Time Validation
+		$max_time = 60*60*24; // in seconds
+		if(isset($_SESSION['xucp_secure']['csrf_token_time'])){
+			$token_time = $_SESSION['xucp_secure']['csrf_token_time'];
+			if(($token_time + $max_time) >= time() ){
+			}else{
+				echo"
+					<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
+						<div id='liveToast' class='toast hide' role='alert' aria-live='assertive' aria-atomic='true'>
+							<div class='toast-header'>
+								<strong class='me-auto'>".LOGIN."</strong>
+								<button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+							</div>
+							<div class='toast-body'>
+								CSRF Token Expired
+							</div>
+						</div>
+					</div>";			
+				unset($_SESSION['xucp_secure']['csrf_token']);
+				unset($_SESSION['xucp_secure']['csrf_token_time']);
+			}
+		}
 		$sql = "select * from accounts where username = '".$username."' LIMIT 1";
 		$rs = mysqli_query($conn,$sql);
 		$numRows = mysqli_num_rows($rs);
@@ -135,6 +174,11 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 site_header_nologged("".LOGIN."");
 site_navi_nologged();
 site_content_nologged();
+
+// 1. Create CSRF token
+$token = md5(uniqid(rand(), TRUE));
+$_SESSION['xucp_secure']['csrf_token'] = $token;
+$_SESSION['xucp_secure']['csrf_token_time'] = time();
 echo "
 		<!-- Page Header-->
 		<div class='bg-dash-dark-2 py-4'>
@@ -174,26 +218,27 @@ echo "
               <div class='col-lg-12'>
                 <div class='card'>
                   <div class='card-body'>		  
-					<form action='".$_SERVER['PHP_SELF']."' method='post' enctype='multipart/form-data' autocomplete='off'>
-						<div class='form-group'>
-							<div class='form-line'>
-								<label class='title' for='exampleFormControlInput1'> ".USERNAME." *</label>
-								<input required aria-label='Social Club Name' type='text' name='username' class='form-control' placeholder='".USERNAME." *' value='' maxlength='30' id='exampleInputEmail1' autocomplete='off'/>
-							</div>
-						</div>										
-						<div class='form-group'>										
-							<div class='form-line'>
-								<label class='title' for='exampleFormControlInput1'> ".PASSWORD." *</label>
-								<input required aria-label='Password' type='password' name='password' class='form-control' placeholder='".PASSWORD." *' value='' maxlength='30' id='exampleInputPassword1' autocomplete='off'/>
-							</div>				
-						</div>
-						<div class='form-group'>
-							<div class='form-line'>
-								".NOTE."
-							</div>
-						</div>						
-						<button type='submit' class='btn btn-primary' name='login' data-target='successLiveToast'>".LOGIN."</submit>					
-					</form>	
+			<form action='".$_SERVER['PHP_SELF']."' method='post' enctype='multipart/form-data' autocomplete='off'>
+				<input type='hidden' name='csrf_token' value='".$token."'>
+				<div class='form-group'>
+					<div class='form-line'>
+						<label class='title' for='exampleFormControlInput1'> ".USERNAME." *</label>
+						<input required aria-label='Social Club Name' type='text' name='username' class='form-control' placeholder='".USERNAME." *' value='' maxlength='30' id='exampleInputEmail1' autocomplete='off'/>
+					</div>
+				</div>										
+				<div class='form-group'>										
+					<div class='form-line'>
+						<label class='title' for='exampleFormControlInput1'> ".PASSWORD." *</label>
+						<input required aria-label='Password' type='password' name='password' class='form-control' placeholder='".PASSWORD." *' value='' maxlength='30' id='exampleInputPassword1' autocomplete='off'/>
+					</div>				
+				</div>
+				<div class='form-group'>
+					<div class='form-line'>
+						".NOTE."
+					</div>
+				</div>						
+				<button type='submit' class='btn btn-primary' name='login' data-target='successLiveToast'>".LOGIN."</submit>					
+			</form>	
                 </div>
               </div>
             </div>
