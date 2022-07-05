@@ -223,7 +223,7 @@ echo "
 				<div class='form-group'>
 					<div class='form-line'>
 						<label class='title' for='exampleFormControlInput1'> ".USERNAME." *</label>
-						<input required aria-label='Social Club Name' type='text' name='username' class='form-control' placeholder='".USERNAME." *' value='' maxlength='30' id='exampleInputEmail1' autocomplete='off'/>
+						<input required aria-label='".USERNAME."' type='text' name='username' class='form-control' placeholder='".USERNAME." *' value='' maxlength='30' id='exampleInputEmail1' autocomplete='off'/>
 					</div>
 				</div>										
 				<div class='form-group'>										
