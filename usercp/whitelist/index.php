@@ -22,21 +22,21 @@ else $mywhitelist = "view";
 
 if ($mywhitelist == "addwl") {
 	if(isset($_POST['myaddwl'])){
-		$ucpname    =$_POST['ucpname'];
-		$charname     =$_POST['charname'];
-		$charstory     =$_POST['charstory'];
-		$frage1     =$_POST['frage1'];
-		$frage2     =$_POST['frage2'];
-		$frage3     =$_POST['frage3'];
-		$frage4     =$_POST['frage4'];
-		$frage5     =$_POST['frage5'];
-		$frage6     =$_POST['frage6'];
-		$frage7     =$_POST['frage7'];
-		$frage8     =$_POST['frage8'];
-		$frage9     =$_POST['frage9'];
-		$frage10    =$_POST['frage10'];
-		$frage11    =$_POST['frage11'];
-		$frage12    =$_POST['frage12'];
+		$ucpname    = filter_input(INPUT_POST, 'ucpname', FILTER_SANITIZE_STRING);
+		$charname     = filter_input(INPUT_POST, 'charname', FILTER_SANITIZE_STRING);
+		$charstory     = filter_input(INPUT_POST, 'charstory', FILTER_SANITIZE_STRING);
+		$frage1     = filter_input(INPUT_POST, 'frage1', FILTER_SANITIZE_STRING);
+		$frage2     = filter_input(INPUT_POST, 'frage2', FILTER_SANITIZE_STRING);
+		$frage3     = filter_input(INPUT_POST, 'frage3', FILTER_SANITIZE_STRING);
+		$frage4     = filter_input(INPUT_POST, 'frage4', FILTER_SANITIZE_STRING);
+		$frage5     = filter_input(INPUT_POST, 'frage5', FILTER_SANITIZE_STRING);
+		$frage6     = filter_input(INPUT_POST, 'frage6', FILTER_SANITIZE_STRING);
+		$frage7     = filter_input(INPUT_POST, 'frage7', FILTER_SANITIZE_STRING);
+		$frage8     = filter_input(INPUT_POST, 'frage8', FILTER_SANITIZE_STRING);
+		$frage9     = filter_input(INPUT_POST, 'frage9', FILTER_SANITIZE_STRING);
+		$frage10    = filter_input(INPUT_POST, 'frage10', FILTER_SANITIZE_STRING);
+		$frage11    = filter_input(INPUT_POST, 'frage11', FILTER_SANITIZE_STRING);
+		$frage12    = filter_input(INPUT_POST, 'frage12', FILTER_SANITIZE_STRING);
 
 		$sql = "INSERT INTO whitelist SET ucpname='".$ucpname."', charname='".$charname."', charstory='".$charstory."', frage1='".$frage1."', frage2='".$frage2."', frage3='".$frage3."', frage4='".$frage4."', frage5='".$frage5."', frage6='".$frage6."', frage7='".$frage7."', frage8='".$frage8."', frage9='".$frage9."', frage10='".$frage10."', frage11='".$frage11."', frage12='".$frage12."'";
    
@@ -104,85 +104,85 @@ echo "
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>Dein Charaktername</label>
 					<div class='col-sm-12'>
-						<input type='text' class='form-control' name='charname'>
+						<input type='text' class='form-control' name='charname' required>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>Deine Charakter Story</label>
 					<div class='col-sm-12'>
-						<input type='text' class='form-control' name='charstory'>
+						<input type='text' class='form-control' name='charstory' required>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage1'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage1' name='frage1' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage1' name='frage1' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage2'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage2' name='frage2' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage2' name='frage2' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage3'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage3' name='frage3' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage3' name='frage3' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage4'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage4' name='frage4' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage4' name='frage4' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage5'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage5' name='frage5' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage5' name='frage5' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage6'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage6' name='frage6' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage6' name='frage6' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage7'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage7' name='frage7' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage7' name='frage7' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage8'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage8' name='frage8' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage8' name='frage8' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage9'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage9' name='frage9' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage9' name='frage9' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage10'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage10' name='frage10' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage10' name='frage10' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage11'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage11' name='frage11' class='form-control'rows='3' cols='100'></textarea>
+						<textarea id='frage11' name='frage11' class='form-control'rows='3' cols='100' required></textarea>
 					</div>
 				</div>
 				<div class='form-group'>
 					<label class='col-sm-12 col-form-label'>".htmlentities($dashboard['frage12'], ENT_QUOTES, 'UTF-8')."</label>
 					<div class='col-sm-12'>
-						<textarea id='frage12' name='frage12' class='form-control' rows='3' cols='100'></textarea>
+						<textarea id='frage12' name='frage12' class='form-control' rows='3' cols='100' required></textarea>
 					</div>
 				</div>			
 				<center>
