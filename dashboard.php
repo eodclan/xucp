@@ -136,7 +136,7 @@ echo "
 		$id = $dashboard['id'];
 		$title = $dashboard[$title_field];
 		$content = $dashboard[$content_field];
-		$shortcontent = substr($content, 0, 260)."...";					
+		$shortcontent = substr($content, 0, 1024)."...";					
 		echo "
 		<section class='pt-0'>
           <div class='container-fluid'>		
