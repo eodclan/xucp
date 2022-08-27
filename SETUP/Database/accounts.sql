@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.1.4
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Erstellungszeit: 13. Jun 2022 um 14:10
--- Server-Version: 10.6.8-MariaDB-1:10.6.8+maria~bullseye
--- PHP-Version: 8.0.19
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -33,7 +24,7 @@ CREATE TABLE `accounts` (
   `adminlevel` int(11) NOT NULL DEFAULT 0,
   `language` varchar(50) DEFAULT 'en',
   `userava` varchar(256) DEFAULT '/themes/uploads/default.jpg',
-  `usersig` varchar(256) DEFAULT NULL
+  `usersig` varchar(256) DEFAULT 'No signature available!'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
 --
