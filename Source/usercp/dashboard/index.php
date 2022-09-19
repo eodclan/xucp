@@ -10,7 +10,7 @@
 // ************************************************************************************//
 // * License Typ: GNU GPLv3
 // ************************************************************************************//
-include(dirname(__FILE__) . "/include/features.php");
+include(dirname(__FILE__) . "/../../include/features.php");
 
 site_secure();
 secure_url();

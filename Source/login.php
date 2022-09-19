@@ -142,7 +142,7 @@ if('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['login'])){
 					'secure_lang' => $account["language"],
 					'secure_key' => sitehash($username)
 				];
-				header("Location:dashboard.php");
+				header("Location:/usercp/dashboard/index.php");
 			}else{
 				echo"
 				<div class='position-fixed bottom-0 end-0 p-3' style='z-index: 11'>
