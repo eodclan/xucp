@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3
+// * Version: 1.3.2
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -43,11 +43,6 @@ function site_footer() {
     <!-- Main Default File-->
     <script src='/themes/".$_SESSION['username']['site_settings_themes']."/js/home-default.js'></script>
     <script>
-      // ------------------------------------------------------- //
-      //   Inject SVG Sprite - 
-      //   see more here 
-      //   https://css-tricks.com/ajaxing-svg-sprite/
-      // ------------------------------------------------------ //
       function injectSvgSprite(path) {
       
           var ajax = new XMLHttpRequest();
@@ -59,7 +54,10 @@ function site_footer() {
           div.innerHTML = ajax.responseText;
           document.body.insertBefore(div, document.body.childNodes[0]);
           }
+      }
       injectSvgSprite('/themes/".$_SESSION['username']['site_settings_themes']."/vendor/icons/orion-svg-sprite.svg'); 
+      
+      
     </script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
