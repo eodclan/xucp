@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3
+// * Version: 1.3.1
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -24,7 +24,7 @@ echo "
         <!-- Sidebar Header-->
 		<span class='text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2'>".$_SESSION['username']['site_settings_site_name']."</span>
         <ul class='list-unstyled'>
-              <li class='sidebar-item'><a class='sidebar-link' href='/dashboard.php'> 
+              <li class='sidebar-item'><a class='sidebar-link' href='/usercp/dashboard/index.php'> 
                       <svg class='svg-icon svg-icon-sm svg-icon-heavy'>
                         <use xlink:href='#real-estate-1'> </use>
                       </svg><span>".DASHBOARD." </span></a></li>
@@ -57,7 +57,7 @@ echo "
               <li class='sidebar-item'><a class='sidebar-link' href='/usercp/keyboard/index.php'> 
                       <svg class='svg-icon svg-icon-sm svg-icon-heavy'>
                         <use xlink:href='#multiple-windows-1'> </use>
-                      </svg><span>Tastaturbelegung </span></a></li>
+                      </svg><span>".KEY_HEADER_2." </span></a></li>
         </ul>";
 	if(intval($_SESSION['username']['secure_staff']) >= 5) {
 	secure_url();
