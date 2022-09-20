@@ -7,12 +7,11 @@ https://derstr1k3r.de
 https://discord.gg/xg5mnYUWch
 
 
-
 Requirements for xUCP Free:
 
-1. MySQL servers
-2. Web server (XAMPP is not supported!)
-3. Php 8.x or newer
+  1. MySQL servers
+  2. Web server (XAMPP is not supported!)
+  3. Php 8.x or newer
 
 Features of the xUCP Free:
 
@@ -24,6 +23,7 @@ Features of the xUCP Free:
   6. My character
   7. Site Settings
   8. Clients & Servers
+
 
 best regards
 
