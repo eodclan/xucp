@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3
+// * Version: 1.3.4
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
 		  $site_gserverport 	= filter_input(INPUT_POST, 'site_gserverport', FILTER_SANITIZE_STRING);		  
 		  $site_themes 			= filter_input(INPUT_POST, 'site_themes', FILTER_SANITIZE_STRING);	
 		  
-		  $sql = "UPDATE config SET site_dl_section='".$site_dl_section."', site_rage_section='".$site_rage_section."', site_altv_section='".$site_altv_section."', site_fivem_section='".$site_fivem_section."', site_redm_section='".$site_redm_section."', site_online='".$site_online."', site_name='".$site_name."', site_teamspeak='".$site_teamspeak."', site_gservername='".$site_gservername."', site_gserverip='".$site_gserverip."', site_gserverport='".$site_gserverport."', site_themes='".$site_themes."' WHERE id = ".$siteconfigchange['id']."";
+		  $sql = "UPDATE xucp_config SET site_dl_section='".$site_dl_section."', site_rage_section='".$site_rage_section."', site_altv_section='".$site_altv_section."', site_fivem_section='".$site_fivem_section."', site_redm_section='".$site_redm_section."', site_online='".$site_online."', site_name='".$site_name."', site_teamspeak='".$site_teamspeak."', site_gservername='".$site_gservername."', site_gserverip='".$site_gserverip."', site_gserverport='".$site_gserverport."', site_themes='".$site_themes."' WHERE id = ".$siteconfigchange['id']."";
 		  $_SESSION['username']['site_settings_site_online'] = $site_online;
 		  $_SESSION['username']['site_settings_site_name'] = $site_name;
 		  $_SESSION['username']['site_settings_dl_section'] = $site_dl_section;		  
@@ -150,7 +150,7 @@ echo "
 										<div class='form-line'>
 											<select name='site_themes' class='form-control show-tick' required>
 												<option value=''>-- ".SITECONFIG_THEMES_INFO." --</option>
-												<option value='default'>".SITECONFIG_THEMES_BLACK."</option>
+												<option value='default-black'>".SITECONFIG_THEMES_BLACK."</option>
 												<option value='default-blue'>".SITECONFIG_THEMES_BLUE."</option>
 												<option value='default-green'>".SITECONFIG_THEMES_GREEN."</option>
 												<option value='default-red'>".SITECONFIG_THEMES_RED."</option>												

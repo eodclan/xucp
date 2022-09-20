@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3.2
+// * Version: 1.3.4
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -55,9 +55,8 @@ function site_footer() {
           document.body.insertBefore(div, document.body.childNodes[0]);
           }
       }
+
       injectSvgSprite('/themes/".$_SESSION['username']['site_settings_themes']."/vendor/icons/orion-svg-sprite.svg'); 
-      
-      
     </script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>

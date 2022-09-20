@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3.1
+// * Version: 1.3.4
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -153,7 +153,7 @@ define("SITECONFIG_THEMES_RED","Red");
 // ************************************************************************************//
 // * English Language Section - Message System 
 // ************************************************************************************//
-define("MSG_1","You should look first <a href='/login.php'>login</a>!");
+define("MSG_1","You should look first <a href='/usercp/login/index.php'>login</a>!");
 define("MSG_2","You are not a supporter!");
 define("MSG_3","<b>You have successfully edited the account!</b><br><br><a href='staff_userchanged.php'>go back</a>");
 define("MSG_4","<b>Your ticket has been sent!</b>");

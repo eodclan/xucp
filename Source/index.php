@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3.1
+// * Version: 1.3.4
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -26,7 +26,7 @@ echo "
 		<div class='container-fluid py-2'>
 			<nav aria-label='breadcrumb'>
 				<ol class='breadcrumb mb-0 py-3 px-0'>
-					<li class='breadcrumb-item'><a href='index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
+					<li class='breadcrumb-item'><a href='/index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
 					<li class='breadcrumb-item active' aria-current='page'>".HOME_NOLOGGED."</li>					
                 </ol>
 			</nav>

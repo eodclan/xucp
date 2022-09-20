@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3.1
+// * Version: 1.3.4
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -153,7 +153,7 @@ define("SITECONFIG_THEMES_RED","Rot");
 // ************************************************************************************//
 // * German Language Section - Message System 
 // ************************************************************************************//
-define("MSG_1","Sie sollten sich zuerst <a href='/login.php'>einloggen</a>!");
+define("MSG_1","Sie sollten sich zuerst <a href='/usercp/login/index.php'>einloggen</a>!");
 define("MSG_2","Du bist kein Supporter!");
 define("MSG_3","<b>Du hast den Account erfolgreich bearbeitet!</b>");
 define("MSG_4","<b>Dein Ticket wurde gesendet!</b><br><br><a href='support.php'>Zurück</a>");

@@ -34,7 +34,7 @@ function site_secure() {
 		<div class='container-fluid py-2'>
 			<nav aria-label='breadcrumb'>
 				<ol class='breadcrumb mb-0 py-3 px-0'>
-					<li class='breadcrumb-item'><a href='/login.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
+					<li class='breadcrumb-item'><a href='/usercp/login/index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
 					<li class='breadcrumb-item active' aria-current='page'>".SECURE_SYSTEM."</li>					
                 </ol>
 			</nav>
@@ -73,7 +73,7 @@ function site_secure_staff_check() {
 		<div class='container-fluid py-2'>
 			<nav aria-label='breadcrumb'>
 				<ol class='breadcrumb mb-0 py-3 px-0'>
-					<li class='breadcrumb-item'><a href='/login.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
+					<li class='breadcrumb-item'><a href='/usercp/login/index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
 					<li class='breadcrumb-item active' aria-current='page'>".SECURE_SYSTEM."</li>					
                 </ol>
 			</nav>
@@ -112,7 +112,7 @@ function site_secure_staff_check_rank() {
 		<div class='container-fluid py-2'>
 			<nav aria-label='breadcrumb'>
 				<ol class='breadcrumb mb-0 py-3 px-0'>
-					<li class='breadcrumb-item'><a href='/login.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
+					<li class='breadcrumb-item'><a href='/usercp/login/index.php'>".$_SESSION['username']['site_settings_site_name']."</a></li>
 					<li class='breadcrumb-item active' aria-current='page'>".SECURE_SYSTEM."</li>					
                 </ol>
 			</nav>
