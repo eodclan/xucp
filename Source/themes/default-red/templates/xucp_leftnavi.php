@@ -4,7 +4,7 @@
 // ************************************************************************************//
 // * Author: DerStr1k3r
 // ************************************************************************************//
-// * Version: 1.3.1
+// * Version: 1.3.3
 // * 
 // * Copyright (c) 2022 DerStr1k3r. All rights reserved.
 // ************************************************************************************//
@@ -120,11 +120,11 @@ echo "
         <!-- Sidebar Header-->
 		<span class='text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2'>".$_SESSION['username']['site_settings_site_name']."</span>
         <ul class='list-unstyled'>
-              <li class='sidebar-item'><a class='sidebar-link' href='/login.php'> 
+              <li class='sidebar-item'><a class='sidebar-link' href='/usercp/login/index.php'> 
                       <svg class='svg-icon svg-icon-sm svg-icon-heavy'>
                         <use xlink:href='#disable-1'> </use>
                       </svg><span>".LOGIN." </span></a></li>
-              <li class='sidebar-item'><a class='sidebar-link' href='/register.php?myregister=register'> 
+              <li class='sidebar-item'><a class='sidebar-link' href='/usercp/register/index.php?myregister=register'> 
                       <svg class='svg-icon svg-icon-sm svg-icon-heavy'>
                         <use xlink:href='#disable-2'> </use>
                       </svg><span>".REGISTER." </span></a></li>
