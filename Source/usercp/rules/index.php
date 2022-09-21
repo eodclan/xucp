@@ -40,8 +40,7 @@ site_content_logged();
 		<div class='row gy-4'>
 		<div class='col-lg-12'>
 		<div class='card'>
-			<div class='card-header'>
-				<h4 class='mb-0'>";
+			<div class='card-header'>";
 				$query = "select * from xucp_rules";
 				$result = mysqli_query($conn,$query);
 
@@ -73,7 +72,6 @@ site_content_logged();
 	}				
 
 	echo "
-				</h4>
 			</div>	
 		      </div>
 		     </div>
