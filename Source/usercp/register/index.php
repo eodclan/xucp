@@ -29,7 +29,6 @@ if ($myregister == "register") {
 		$email 	= filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 		$password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
 		$hashPassword = password_hash($password,PASSWORD_BCRYPT);
-		$socialid = (int)0;
 
 		// The 2nd check to make sure that nothing bad can happen.
 		if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
@@ -136,7 +135,7 @@ if ($myregister == "register") {
 					</div>
 				</div>";			
 		}else{
-			$sql = "INSERT INTO accounts (username, email, password, socialid) VALUES ('$username', '$email', '$hashPassword', '$socialid')";
+			$sql = "INSERT INTO accounts (username, email, password) VALUES ('$username', '$email', '$hashPassword')";
    
 			if ($conn->query($sql) === TRUE) {
 				echo"
