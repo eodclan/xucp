@@ -10,9 +10,10 @@ https://discord.gg/xg5mnYUWch
 Requirements for xUCP Free:
 
   1. MySQL servers
-  2. Web server (XAMPP is not supported!)
+  2. Web server (XAMPP is not supported!) 
   3. Php 8.x or newer
-
+  4. Apache2 Headers Modul (a2enmod headers)
+  
 Features of the xUCP Free:
 
   1. CSRF Login & CSRF Register System
